@@ -13,4 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
+//= require farm_shed/all
 //= require_tree .
+
+$(document).on('turbolinks:load', function(){
+  var form = new BootstrapRailsForm('form');
+  form.all();
+});

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <% if user_signed_in? && current_user.id == @post.user_id %>
+        <div class="pull-right">
+          <%= link_to 'edit', edit_post_path(@post), class: 'btn btn-info btn-sm' %></div>
+      <% end %>
+      <h1>
+        <%= @post.title %>
+        <small>by <%= @post.user.name %></small>
+      </h1>
+      <h6><%= @post.created_at.strftime('%D %r') %></h6>
+    </div>
+    <h3>
+
+    </h3>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="body">
+        <%= @post.body %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div  class="col-sm-12">
+      <hr>
+      <h3>
+        Comments
+      </h3>
+      <% if user_signed_in? %>
+        <%= link_to 'Add', new_comment_path(post_id: @post.id), class: 'btn btn-primary' %>
+      <% else %>
+        <%= link_to 'sign in to comment', new_user_session_path %>
+      <% end %>
+    </div>
+  </div>
+
+  <% @post.comments.each do |c| %>
+    <%= render partial: 'comments/show', locals: {comment: c} %>
+  <% end %>
+
+  <hr>
+</div>

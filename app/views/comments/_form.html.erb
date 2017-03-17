@@ -1,0 +1,17 @@
+<%= form_for(comment) do |f| %>
+  <%= f.hidden_field :post_id %>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <%= error_explanation comment %>
+
+      <div class="form-group">
+        <%= f.text_area :body %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+<% end %>

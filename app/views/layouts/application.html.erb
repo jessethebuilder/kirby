@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MongoBase</title>
+    <title>PreEmploy</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,12 @@
   </head>
 
   <body>
+    <%= render partial: 'parts/main_nav' %>
+
+    <%= the_flash %>
+
     <%= yield %>
+
+    <div id="footer" style="height: 200px"></div>
   </body>
 </html>
