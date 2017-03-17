@@ -33,8 +33,6 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        @comment.post = Post.find(comment_params['post_id'])
-        @comment.user = current_user
         format.html { redirect_to post_path(@comment.post, anchor: "comment#{@comment.id}") }
         # format.json { render :show, status: :created, location: @comment }
       else
