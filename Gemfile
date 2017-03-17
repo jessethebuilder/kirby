@@ -19,9 +19,9 @@ gem 'farm_shed', git: 'https://github.com/jessethebuilder/farm_shed', branch: 'l
 gem 'farm_devise_views', git: 'https://github.com/jessethebuilder/farm_devise_views'
 # gem 'farm_devise_views', path: '/var/www/my_gems/farm_devise_views'
 
+gem 'faker'
 
 group :test, :development do
-  gem 'faker'
   gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'timecop'
