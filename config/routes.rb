@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root to: 'posts#index'
 
-  resources :comments
+  resources :comments, only: [:create]
 
   devise_for :users
 end

@@ -14,11 +14,11 @@ class CommentsController < ApplicationController
   # end
 
   # GET /comments/new
-  def new
-    @comment = Comment.new
-    # Will break without a post_id param
-    @comment.post = Post.find(params['post_id'])
-  end
+  # def new
+  #   @comment = Comment.new
+  #   # Will break without a post_id param
+  #   @comment.post = Post.find(params['post_id'])
+  # end
 
   # GET /comments/1/edit
   # def edit
