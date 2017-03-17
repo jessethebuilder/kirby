@@ -1,6 +1,7 @@
 User.destroy_all
 10.times do
-  User.create! email: Faker::Internet.email, password: 'Password123'
+  User.create! email: Faker::Internet.email, password: 'Password123',
+               first_name: Faker::Name.first_name, last_name: Faker::Name.last_name
 end
 
 Post.destroy_all
