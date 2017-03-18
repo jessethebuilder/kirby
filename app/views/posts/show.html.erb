@@ -23,7 +23,6 @@
       </div>
     </div>
   </div>
-
   <div class="row">
     <div  class="col-sm-12">
       <hr>
@@ -37,29 +36,16 @@
     <%= render partial: 'comments/show', locals: {comment: c} %>
   <% end %>
 
-  <div class="new_comment">
-    <% if user_signed_in? %>
-      <%= form_for(@new_comment) do |f| %>
-        <%= f.hidden_field :post_id %>
-
-        <div class="row">
-          <div class="col-sm-6">
-            <%#= error_explanation comment %>
-
-            <div class="form-group">
-              <%= f.text_area :body %>
-            </div>
-
-            <div class="form-group">
-              <%= f.submit 'Submit Comment', class: 'btn btn-primary' %>
-            </div>
-
-            <div class="col-sm-6"></div>
-          </div>
-        </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <% if user_signed_in? %>
+        <%= render partial: 'comments/new', locals: {comment: @new_comment} %>
+      <% else %>
+        <h3>Sign in to comment</h3>
+        <%= render partial: 'devise/sessions/new' %>
       <% end %>
-    <% else %>
-      <%= link_to 'sign in to comment', new_user_session_path %>
-    <% end %>
+    </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"></div>
   </div>
 </div>
